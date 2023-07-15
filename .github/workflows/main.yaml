@@ -16,6 +16,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            git clone 'https://${{ github.REPOSITORY_OWNER }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git'
             cd ${{ github.event.repository.name }}/
             git fetch --all
             git checkout main --force
