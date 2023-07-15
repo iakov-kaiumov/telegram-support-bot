@@ -3,6 +3,8 @@ FROM python:3.10
 
 WORKDIR /
 
+COPY requirements.txt .
+
 # install pip dependencies
 RUN pip install -r requirements.txt
 
